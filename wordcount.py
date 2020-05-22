@@ -58,7 +58,6 @@ def print_words(filename):
 
 def print_top(filename):
     """Prints the top count listing for the given file."""
-    list = create_word_dict(filename)
     sorted_list = sorted(list.items(), key=lambda x: x[1], reverse=True)
     for k, v in sorted_list[:20]:
         print(k, ':', v)
