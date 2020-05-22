@@ -26,6 +26,7 @@ should return a dictionary with words as keys, and their counts as values.
 # Your name, plus anyone who helped you with this assignment
 # Give credit where credit is due.
 __author__ = "Mike Boring"
+# used the following sources for reference:: https://careerkarma.com/blog/python-sort-a-dictionary-by-value/
 
 import sys
 
@@ -50,16 +51,16 @@ def print_words(filename):
     """
     print('print_words section')
     list = create_word_dict(filename)
-    for k, v in list.items():
+    for k, v in sorted(list.items()):
         print(k, ':', v)
     return
 
 
 def print_top(filename):
     """Prints the top count listing for the given file."""
-    print('print_top section')
     list = create_word_dict(filename)
-    for k, v in list.items():
+    sorted_list = sorted(list.items(), key=lambda x: x[1], reverse=True)
+    for k, v in sorted_list[:20]:
         print(k, ':', v)
     return
 
