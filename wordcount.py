@@ -41,7 +41,6 @@ def create_word_dict(filename):
                 result[word] = 1
             else:
                 result[word] = result[word] + 1
-
     return result
 
 
@@ -49,7 +48,6 @@ def print_words(filename):
     """Prints one per line '<word> : <count>', sorted
     by word for the given file.
     """
-    print('print_words section')
     list = create_word_dict(filename)
     for k, v in sorted(list.items()):
         print(k, ':', v)
@@ -58,6 +56,7 @@ def print_words(filename):
 
 def print_top(filename):
     """Prints the top count listing for the given file."""
+    list = create_word_dict(filename)
     sorted_list = sorted(list.items(), key=lambda x: x[1], reverse=True)
     for k, v in sorted_list[:20]:
         print(k, ':', v)
